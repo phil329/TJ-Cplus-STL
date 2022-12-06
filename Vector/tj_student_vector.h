@@ -1,4 +1,4 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #pragma once
 #include<iostream>
 using namespace std;

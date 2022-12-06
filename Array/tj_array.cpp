@@ -1,11 +1,11 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #include <iostream>
 #include "tj_array.h"
 
-//³õÊ¼»¯£¬¸´ÖÆ¹¹ÔìµÄ³ÉÔ±º¯ÊıÊµÏÖ
+//åˆå§‹åŒ–ï¼Œå¤åˆ¶æ„é€ çš„æˆå‘˜å‡½æ•°å®ç°
 template<typename T, size_t N>
 tj_array<T, N>::tj_array() {
-	//¿Õ¹¹Ôìº¯Êı£¬É¶Ò²²»×ö¡£
+	//ç©ºæ„é€ å‡½æ•°ï¼Œå•¥ä¹Ÿä¸åšã€‚
 }
 template<typename T, size_t N>
 tj_array<T, N>::tj_array(const initializer_list<T> &list) {
@@ -30,7 +30,7 @@ tj_array<T, N>& tj_array<T, N>::operator=(const tj_array<T, N> self) {
 }
 
 
-//at,fill,swapµÄ³ÉÔ±º¯ÊıÊµÏÖ
+//at,fill,swapçš„æˆå‘˜å‡½æ•°å®ç°
 template<typename T, size_t N>
 T& tj_array<T, N>::at(int i){
 	if(i<0||i>=N)
@@ -57,7 +57,7 @@ void tj_array<T, N>::swap(tj_array<T, N> &a){
 
 
 
-//±È½ÏÔËËã·ûµÄ³ÉÔ±º¯ÊıÊµÏÖ
+//æ¯”è¾ƒè¿ç®—ç¬¦çš„æˆå‘˜å‡½æ•°å®ç°
 template<typename T, size_t N>
 bool tj_array<T, N>::operator!=(const tj_array<T, N> &a) {
 	int i;
@@ -128,7 +128,7 @@ bool tj_array<T, N>::operator>=(const tj_array<T, N> &a)
 
 
 
-//getº¯ÊıµÄÁ½ÖÖÊµÏÖ
+//getå‡½æ•°çš„ä¸¤ç§å®ç°
 template<size_t n, typename T, size_t N>
 const T& get(const tj_array<T, N> &a){
 	return a.content[n];

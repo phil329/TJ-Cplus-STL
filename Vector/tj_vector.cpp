@@ -1,8 +1,8 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #include "tj_vector.h"
 using namespace std;
 
-/*****************************************************************¹¹ÔìºÍÎö¹¹**********************************************************/
+/*****************************************************************æ„é€ å’Œææ„**********************************************************/
 template<class T>
 tj_vector<T>::tj_vector() {
 	head = new T[InitialSize];
@@ -91,14 +91,14 @@ tj_vector<T>::~tj_vector() {
 	max_len = 0;
 }
 
-/******************************************************************* assign¸³Öµ ***********************************************/
+/******************************************************************* assignèµ‹å€¼ ***********************************************/
 template<class T>
 void tj_vector<T>::assign(size_t n, const T & value) {
 	clear();
 	if (n < max_len) {
 		len = n;
 		max_len = InitialSize;
-	}//ÄÚ´æ¹»Ê¹
+	}//å†…å­˜å¤Ÿä½¿
 	else {
 		//delete[]head;
 		head = new T[n*IncreaseTime];
@@ -126,7 +126,7 @@ void tj_vector<T>::assign(const tj_iterator<T> & from, const tj_iterator<T> & to
 
 template<class T>
 void tj_vector<T>::assign(const tj_vector<T> & _a) {
-	if (_a.len <= max_len) {	//¿ÉÒÔÖ±½Ó¸³Öµ£¬²»ÓÃ²Ù×÷¿Õ¼ä
+	if (_a.len <= max_len) {	//å¯ä»¥ç›´æ¥èµ‹å€¼ï¼Œä¸ç”¨æ“ä½œç©ºé—´
 		memcpy(head, _a.head, sizeof(T)*_a.len);
 		len = _a.len;
 	}
@@ -158,7 +158,7 @@ void tj_vector<T>::assign(initializer_list<T> L) {
 
 
 
-/***************************************************************** ÔªËØµÄÔö¼õ *************************************************/
+/***************************************************************** å…ƒç´ çš„å¢å‡ *************************************************/
 
 template<class T>
 void tj_vector<T>::clear() {
@@ -227,7 +227,7 @@ tj_iterator<T> tj_vector<T>::insert(tj_iterator<T> pos, const T & value) {
 		head = tmp;
 		max_len = (len) * IncreaseTime;
 	}
-	//µ½´ËÎªÖ¹ÄÜ¹»±£Ö¤×ã¹»µÄ¿Õ¼ä£¬¶¼¿ÉÒÔ×öÁË¡£
+	//åˆ°æ­¤ä¸ºæ­¢èƒ½å¤Ÿä¿è¯è¶³å¤Ÿçš„ç©ºé—´ï¼Œéƒ½å¯ä»¥åšäº†ã€‚
 	size_t num= size_t(end() - pos);
 	memmove(pos.ptr+1, pos.ptr, num * sizeof(T));
 	*pos = value;
@@ -244,7 +244,7 @@ tj_iterator<T> tj_vector<T>::insert(tj_iterator<T> pos, size_t n, const T & valu
 		head = tmp;
 		max_len = (len + n) * IncreaseTime;
 	}
-	//µ½´ËÎªÖ¹ÄÜ¹»±£Ö¤×ã¹»µÄ¿Õ¼ä£¬¶¼¿ÉÒÔ×öÁË¡£
+	//åˆ°æ­¤ä¸ºæ­¢èƒ½å¤Ÿä¿è¯è¶³å¤Ÿçš„ç©ºé—´ï¼Œéƒ½å¯ä»¥åšäº†ã€‚
 	size_t i, num = size_t(end() - pos);
 	memmove(pos.ptr+n, pos.ptr, num * sizeof(T));
 	for (i = 0; i < n; i++) {
@@ -263,7 +263,7 @@ tj_iterator<T> tj_vector<T>::insert(tj_iterator<T> pos, tj_iterator<T> from, tj_
 		head = tmp;
 		max_len = (len + (from - to) + 1) * IncreaseTime;
 	}
-	//µ½´ËÎªÖ¹ÄÜ¹»±£Ö¤×ã¹»µÄ¿Õ¼ä£¬¶¼¿ÉÒÔ×öÁË¡£
+	//åˆ°æ­¤ä¸ºæ­¢èƒ½å¤Ÿä¿è¯è¶³å¤Ÿçš„ç©ºé—´ï¼Œéƒ½å¯ä»¥åšäº†ã€‚
 
 	size_t i,n= (to-from), num = size_t(end() - pos);
 	for (i = 0; i <num; i++) {
@@ -279,7 +279,7 @@ tj_iterator<T> tj_vector<T>::insert(tj_iterator<T> pos, tj_iterator<T> from, tj_
 
 
 
-/***************************************************************** ÆäÓà¹¦ÄÜ *****************************************************/
+/***************************************************************** å…¶ä½™åŠŸèƒ½ *****************************************************/
 template<class T>
 void tj_vector<T>::resize(size_t n) {
 	size_t i;

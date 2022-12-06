@@ -1,6 +1,7 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #pragma once
 #include<iostream>
+#include <initializer_list>
 #include "tj_student_array.h"
 #include<string.h>
 #include<exception>
@@ -15,10 +16,10 @@ public:
 	typedef const T* tj_const_iterator;
 	typedef std::reverse_iterator<tj_iterator>  tj_reverse_iterator;
 	typedef std::reverse_iterator<tj_const_iterator>   tj_const_reverse_iterator;
-	//ÕâÖÖÀûÓÃµü´úÆ÷µÄ·½·¨ÊÇ¾Ïè¯¸ø³öµÄ½â¾ö°¸Àı¡£
+	//è¿™ç§åˆ©ç”¨è¿­ä»£å™¨çš„æ–¹æ³•æ˜¯é ç’‡ç»™å‡ºçš„è§£å†³æ¡ˆä¾‹ã€‚
 
 public:
-	//¹¹Ôì¼°Îö¹¹º¯Êı
+	//æ„é€ åŠææ„å‡½æ•°
 	tj_array();
 	tj_array(const initializer_list<T> &c);
 	tj_array(const tj_array &self);

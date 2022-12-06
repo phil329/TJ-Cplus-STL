@@ -1,23 +1,24 @@
-/*¾Ïè¯ 1851846 ÊıÇ¿*/
+/*é ç’‡ 1851846 æ•°å¼º*/
 #include <iostream>
 #include <string>
 #include <array>
-#include"tj_array_ju.cpp"
-#include "tj_array_ju.h"
-#include"tj_student.h"
+#include <initializer_list>
+#include"tj_array.cpp"
+#include "tj_array.h"
+#include"tj_student_array.h"
 
 using namespace std;
 
 
-/* Õâ¾äºê¶¨Òå×¢ÊÍµô£¬¾ÍÊÇÏµÍ³arrayµÄ²âÊÔ£¬
-   ´ò¿ªºê¶¨Òå£¬Ôò²âÊÔ×Ô¼ºµÄ tj_array */
+/* è¿™å¥å®å®šä¹‰æ³¨é‡Šæ‰ï¼Œå°±æ˜¯ç³»ç»Ÿarrayçš„æµ‹è¯•ï¼Œ
+   æ‰“å¼€å®å®šä¹‰ï¼Œåˆ™æµ‹è¯•è‡ªå·±çš„ tj_array */
  //  #define	array	tj_array
 
 
 void press_key(int num, const char *prompt)
 {
 	int i;
-	cout<< endl<<prompt<<"£¬°´ÈÎÒâ¼ü¼ÌĞø...";
+	cout<< endl<<prompt<<"ï¼ŒæŒ‰ä»»æ„é”®ç»§ç»­...";
 	for (i = 0; i < num; i++)
 		getchar();
 	cout << endl;
@@ -28,15 +29,15 @@ int main()
 {
 	//int
 	if (1) {
-		int test_int[] = { 0,0,0,0,1,1,1 }; //Ã¿¸ö1¶ÔÓ¦1×éif²âÊÔ
-		// µÚ0×é²âÊÔ 
+		int test_int[] = { 0,0,0,0,1,1,1 }; //æ¯ä¸ª1å¯¹åº”1ç»„ifæµ‹è¯•
+		// ç¬¬0ç»„æµ‹è¯• 
 		if (test_int[0]) {
-			press_key(1, "µÚ0×é²âÊÔ£º\n begin/end/cbegin/cend()¼°rbegin/rend/crbegin/crend()º¯Êı");
+			press_key(1, "ç¬¬0ç»„æµ‹è¯•ï¼š\n begin/end/cbegin/cend()åŠrbegin/rend/crbegin/crend()å‡½æ•°");
 
 			array<int, 5> arr1 = { 1, 2, 3, 4, 5 };
-			cout << "Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º1 2 3 4 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 2 3 4 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.begin(); it != arr1.end(); ++it) {
 				cout << *it << " "; 
 			}
@@ -44,8 +45,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£º1 2 3 4 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼š1 2 3 4 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.cbegin(); it != arr1.cend(); ++it) {
 				cout << *it << " ";
 			}
@@ -53,9 +54,9 @@ int main()
 
 			cout << endl;
 
-			cout << "Êı×é±éÀú(·´Ïò): " << endl;
-			cout << "Ó¦Êä³ö£º5 4 3 2 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(åå‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š5 4 3 2 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.rbegin(); it != arr1.rend(); ++it) {
 				cout << *it << " ";
 			}
@@ -63,8 +64,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£º5 4 3 2 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼š5 4 3 2 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.crbegin(); it != arr1.crend(); ++it) {
 				cout << *it << " ";
 			}
@@ -73,66 +74,66 @@ int main()
 			cout << endl;
 
 			array<int, 0> arr2;
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±beginºÍendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.begin() == arr2.end()) << endl;
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶beginå’Œendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.begin() == arr2.end()) << endl;
 
 			cout << endl;
 
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±rbeginºÍrendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.rbegin() == arr2.rend());
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶rbeginå’Œrendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.rbegin() == arr2.rend());
 
 			cout << endl << endl;
 		}
 		
-		// µÚ1×é²âÊÔ 
+		// ç¬¬1ç»„æµ‹è¯• 
 		if (test_int[1]) {
-			press_key(1, "µÚ1×é²âÊÔ£º\n size()¡¢max_size()ºÍempty()º¯Êı");
+			press_key(1, "ç¬¬1ç»„æµ‹è¯•ï¼š\n size()ã€max_size()å’Œempty()å‡½æ•°");
 
 			array<int, 5> arr1 = { 1, 2, 3, 4, 5 };
 			array<int, 0> arr2;
 
-			cout << "size()º¯Êı: " << endl;
+			cout << "size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º"<<sizeof(arr1)/sizeof(int) << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š"<<sizeof(arr1)/sizeof(int) << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.size() << endl;
 
 			cout << endl;
 
-			cout << "max_size()º¯Êı: " << endl;
+			cout << "max_size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º"<< sizeof(arr1) / sizeof(int) << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š"<< sizeof(arr1) / sizeof(int) << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.max_size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.max_size() << endl;
 
 			cout << endl;
 
-			cout << "empty()º¯Êı: " << endl;
+			cout << "empty()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.empty() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.empty() << endl;
 
 			cout << endl << endl;
 		}
 		
-		// µÚ2×é²âÊÔ 
+		// ç¬¬2ç»„æµ‹è¯• 
 		if (test_int[2]) {
-			press_key(1, "µÚ2×é²âÊÔ£º\n *ÎŞÔ½½çµÄ*ÏÂ±ê[]·ÃÎÊ£¬at(),front(),back(),data()º¯Êı");
+			press_key(1, "ç¬¬2ç»„æµ‹è¯•ï¼š\n *æ— è¶Šç•Œçš„*ä¸‹æ ‡[]è®¿é—®ï¼Œat(),front(),back(),data()å‡½æ•°");
 			array<int, 5> arr1 = { 0, 2, 3, 4, 5 };
 
 			arr1[0] = 1;
-			cout << "ÏÂ±ê[]·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º1 2 3 4 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "ä¸‹æ ‡[]è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 2 3 4 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1[i] << " ";
 			}
@@ -142,9 +143,9 @@ int main()
 
 			arr1[0] = 0;
 			arr1.at(0) = 1;
-			cout << "at()·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º1 2 3 4 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 2 3 4 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -154,37 +155,37 @@ int main()
 
 			arr1[0] = 0;
 			arr1.front() =1 ;
-			cout << "front()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.front() << endl;
+			cout << "front()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.front() << endl;
 
 			cout << endl;
 
 			arr1[4] = 0;
 			arr1.back() = 5;
-			cout << "back()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º5" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.back() << endl;
+			cout << "back()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š5" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.back() << endl;
 
 			cout << endl;
 
-			cout << "data()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º" << &arr1 << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.data() << endl;
+			cout << "data()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š" << &arr1 << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.data() << endl;
 
 			cout << endl << endl;
 
 		}
 		
-		// µÚ3×é²âÊÔ 
+		// ç¬¬3ç»„æµ‹è¯• 
 		if (test_int[3]) {
-			press_key(1, "µÚ3×é²âÊÔ£º\n *ÓĞÔ½½çµÄ*at()º¯Êı");
+			press_key(1, "ç¬¬3ç»„æµ‹è¯•ï¼š\n *æœ‰è¶Šç•Œçš„*at()å‡½æ•°");
 			array<int, 5> arr1 = { 1, 2, 3, 4, 5 };
 			array<int, 0> arr2;
 
-			cout << "at()·ÃÎÊÔ½½ç: " << endl;
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®è¶Šç•Œ: " << endl;
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(5) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -195,8 +196,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(-1) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -207,8 +208,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, 0> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, 0> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr2.at(1) << endl;
 				//throw(std::out_of_range("invalid array<T, 0> subscript"));
@@ -220,16 +221,16 @@ int main()
 			cout << endl << endl;
 		}
 		
-		// µÚ4×é²âÊÔ 
+		// ç¬¬4ç»„æµ‹è¯• 
 		if (test_int[4]) {
-			press_key(1, "µÚ4×é²âÊÔ£º\n fill(),swap()º¯Êı");
+			press_key(1, "ç¬¬4ç»„æµ‹è¯•ï¼š\n fill(),swap()å‡½æ•°");
 			array<int, 5> arr1 = { 1, 2, 3, 4, 5 };
 			array<int, 5> arr2 = { 5,4,3,2,1 };
 
-			cout << "fill()º¯Êı: " << endl;
+			cout << "fill()å‡½æ•°: " << endl;
 			arr1.fill(5);
-			cout << "Ó¦Êä³ö£º5 5 5 5 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼š5 5 5 5 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -238,18 +239,18 @@ int main()
 			cout << endl;
 
 
-			cout << "swap()º¯Êı: " << endl;
+			cout << "swap()å‡½æ•°: " << endl;
 			arr1.swap(arr2);
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º5 4 3 2 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼š5 4 3 2 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
 			cout << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º5 5 5 5 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼š5 5 5 5 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr2.size(); i++) {
 				cout << arr2.at(i) << " ";
 			}
@@ -260,17 +261,17 @@ int main()
 			cout << endl << endl;
 		}
 		
-		// µÚ5×é²âÊÔ 
+		// ç¬¬5ç»„æµ‹è¯• 
 		if (test_int[5]) {
-			press_key(1, "µÚ5×é²âÊÔ£º\n °´ÕÕ> == < >= <= !=µÄË³Ğò¶ÔÁ½¸öarrayÊı×éÈİÆ÷½øĞĞ±È½Ï");
+			press_key(1, "ç¬¬5ç»„æµ‹è¯•ï¼š\n æŒ‰ç…§> == < >= <= !=çš„é¡ºåºå¯¹ä¸¤ä¸ªarrayæ•°ç»„å®¹å™¨è¿›è¡Œæ¯”è¾ƒ");
 			array<int, 5> arr1 = { 1, 2, 3, 4, 5 };
 			array<int, 5> arr2 = { 5, 4, 3, 2, 1 };
 			array<int, 5> arr3 = { 5, 4, 3, 2, 1 };
 			array<int, 5> arr4 = { 5, 4, 3, 2, 2 };
 
-			cout << "arr1Óëarr2±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º0 0 1 0 1 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr1 > arr2) ? 1 : 0) << " ";
+			cout << "arr1ä¸arr2æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š0 0 1 0 1 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr1 > arr2) ? 1 : 0) << " ";
 			cout << ((arr1 == arr2) ? 1 : 0) << " ";
 			cout << ((arr1 < arr2) ? 1 : 0) << " ";
 			cout << ((arr1 >= arr2) ? 1 : 0) << " ";
@@ -280,9 +281,9 @@ int main()
 
 			cout << endl;
 
-			cout << "arr2Óëarr3±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º0 1 0 1 1 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr2 > arr3) ? 1 : 0) << " ";
+			cout << "arr2ä¸arr3æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š0 1 0 1 1 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr2 > arr3) ? 1 : 0) << " ";
 			cout << ((arr2 == arr3) ? 1 : 0) << " ";
 			cout << ((arr2 < arr3) ? 1 : 0) << " ";
 			cout << ((arr2 >= arr3) ? 1 : 0) << " ";
@@ -293,9 +294,9 @@ int main()
 			cout << endl;
 
 
-			cout << "arr4Óëarr2±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º1 0 0 1 0 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr4 > arr2) ? 1 : 0) << " ";
+			cout << "arr4ä¸arr2æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 0 0 1 0 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr4 > arr2) ? 1 : 0) << " ";
 			cout << ((arr4 == arr2) ? 1 : 0) << " ";
 			cout << ((arr4 < arr2) ? 1 : 0) << " ";
 			cout << ((arr4 >= arr2) ? 1 : 0) << " ";
@@ -306,38 +307,38 @@ int main()
 			cout << endl << endl;
 		}
 	
-		// µÚ6×é²âÊÔ 
+		// ç¬¬6ç»„æµ‹è¯• 
 		if (test_int[6]) {
 			
-			press_key(1, "µÚ6×é²âÊÔ£º\n ×ÛºÏ²âÊÔ");
+			press_key(1, "ç¬¬6ç»„æµ‹è¯•ï¼š\n ç»¼åˆæµ‹è¯•");
 			array<int, 1024/sizeof(int)> arr1 ;
 			array<int, 1024 / sizeof(int)> arr2;
 
-			press_key(1, "\nÏòarr1ÖĞÌî1¡ª¡ª1024/sizeof(int)¸öÊı");
+			press_key(1, "\nå‘arr1ä¸­å¡«1â€”â€”1024/sizeof(int)ä¸ªæ•°");
 
 			int i;
 			for (i = 0; i < 1024/ sizeof(int);i++) {
 				arr1[i] = i;
 			}
-			cout << "ÌîÈë³É¹¦£¬Êä³ö¼¸¸öÔªËØ½øĞĞ¼ìÑé"<<endl<<endl;
+			cout << "å¡«å…¥æˆåŠŸï¼Œè¾“å‡ºå‡ ä¸ªå…ƒç´ è¿›è¡Œæ£€éªŒ"<<endl<<endl;
 
-			cout << "Ó¦Êä³ö£º0 255 18 168" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.at(0)<<" "<< arr1.at(1024 / sizeof(int)-1)<<" "<<arr1.at(18) <<" "<< arr1.at(168) << endl;
+			cout << "åº”è¾“å‡ºï¼š0 255 18 168" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.at(0)<<" "<< arr1.at(1024 / sizeof(int)-1)<<" "<<arr1.at(18) <<" "<< arr1.at(168) << endl;
 
 			cout << endl;
 			
-			cout << "²âÊÔswap,arr1Óëarr2½»»»£º" << endl;
+			cout << "æµ‹è¯•swap,arr1ä¸arr2äº¤æ¢ï¼š" << endl;
 			
 			arr1.swap(arr2);
-			cout << "Ó¦Êä³ö£º0 255 18 168" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.at(0) << " " << arr2.at(1024 / sizeof(int) - 1) << " " << arr2.at(18) << " " << arr2.at(168) << endl;
+			cout << "åº”è¾“å‡ºï¼š0 255 18 168" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.at(0) << " " << arr2.at(1024 / sizeof(int) - 1) << " " << arr2.at(18) << " " << arr2.at(168) << endl;
 
-			cout << "²âÊÔfill,arr1È«²¿ÌîÈë1£º" << endl;
+			cout << "æµ‹è¯•fill,arr1å…¨éƒ¨å¡«å…¥1ï¼š" << endl;
 
 			arr1.fill(1);
 
-			cout << "Ó¦Êä³ö£º1 1 1 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.at(0) << " " << arr1.at(1024 / sizeof(int) - 1) << " " << arr1.at(18) << " " << arr1.at(168) << endl;
+			cout << "åº”è¾“å‡ºï¼š1 1 1 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.at(0) << " " << arr1.at(1024 / sizeof(int) - 1) << " " << arr1.at(18) << " " << arr1.at(168) << endl;
 
 			cout << endl << endl;
 		}
@@ -346,17 +347,17 @@ int main()
 	
 	//string
 	if (0) {
-		int test_string[] = { 1,1,1,1,1,1,1 }; //Ã¿¸ö1¶ÔÓ¦1×éif²âÊÔ
+		int test_string[] = { 1,1,1,1,1,1,1 }; //æ¯ä¸ª1å¯¹åº”1ç»„ifæµ‹è¯•
 
-	// µÚ0×é²âÊÔ 
+	// ç¬¬0ç»„æµ‹è¯• 
 		if (test_string[0]) {
-			press_key(1, "µÚ0×é²âÊÔ£º\n begin/end/cbegin/cend()¼°rbegin/rend/crbegin/crend()º¯Êı");
+			press_key(1, "ç¬¬0ç»„æµ‹è¯•ï¼š\n begin/end/cbegin/cend()åŠrbegin/rend/crbegin/crend()å‡½æ•°");
 
 			array<string, 5> arr1 = { "ab","cd" ,"ef", "gh", "ij" };
 
-			cout << "Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£ºab cd ef gh ij" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šab cd ef gh ij" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.begin(); it != arr1.end(); ++it) {
 				cout << *it << " ";
 			}
@@ -364,8 +365,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºab cd ef gh ij" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šab cd ef gh ij" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.cbegin(); it != arr1.cend(); ++it) {
 				cout << *it << " ";
 			}
@@ -373,9 +374,9 @@ int main()
 
 			cout << endl;
 
-			cout << "Êı×é±éÀú(·´Ïò): " << endl;
-			cout << "Ó¦Êä³ö£ºij gh ef cd ab" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(åå‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šij gh ef cd ab" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.rbegin(); it != arr1.rend(); ++it) {
 				cout << *it << " ";
 			}
@@ -383,8 +384,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºij gh ef cd ab" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šij gh ef cd ab" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.crbegin(); it != arr1.crend(); ++it) {
 				cout << *it << " ";
 			}
@@ -393,66 +394,66 @@ int main()
 			cout << endl;
 
 			array<int, 0> arr2;
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±beginºÍendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.begin() == arr2.end()) << endl;
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶beginå’Œendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.begin() == arr2.end()) << endl;
 
 			cout << endl;
 
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±rbeginºÍrendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.rbegin() == arr2.rend());
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶rbeginå’Œrendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.rbegin() == arr2.rend());
 
 			cout << endl << endl;
 		}
 
-		// µÚ1×é²âÊÔ 
+		// ç¬¬1ç»„æµ‹è¯• 
 		if (test_string[1]) {
-			press_key(1, "µÚ1×é²âÊÔ£º\n size()¡¢max_size()ºÍempty()º¯Êı");
+			press_key(1, "ç¬¬1ç»„æµ‹è¯•ï¼š\n size()ã€max_size()å’Œempty()å‡½æ•°");
 
 			array<string, 5> arr1 = { "ab","cd" ,"ef", "gh", "ij" };
 			array<string, 0> arr2;
 
-			cout << "size()º¯Êı: " << endl;
+			cout << "size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º5" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š5" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.size() << endl;
 
 			cout << endl;
 
-			cout << "max_size()º¯Êı: " << endl;
+			cout << "max_size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º5" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š5" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.max_size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.max_size() << endl;
 
 			cout << endl;
 
-			cout << "empty()º¯Êı: " << endl;
+			cout << "empty()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.empty() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.empty() << endl;
 
 			cout << endl << endl;
 		}
 
-		// µÚ2×é²âÊÔ 
+		// ç¬¬2ç»„æµ‹è¯• 
 		if (test_string[2]) {
-			press_key(1, "µÚ2×é²âÊÔ£º\n *ÎŞÔ½½çµÄ*ÏÂ±ê[]·ÃÎÊ£¬at(),front(),back(),data()º¯Êı");
+			press_key(1, "ç¬¬2ç»„æµ‹è¯•ï¼š\n *æ— è¶Šç•Œçš„*ä¸‹æ ‡[]è®¿é—®ï¼Œat(),front(),back(),data()å‡½æ•°");
 			array<string, 5> arr1 = { "ab","cd" ,"ef", "gh", "ij" };
 			array<string, 0> arr2;
 
-			cout << "ÏÂ±ê[]·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£ºab cd ef gh ij" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "ä¸‹æ ‡[]è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šab cd ef gh ij" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1[i] << " ";
 			}
@@ -460,9 +461,9 @@ int main()
 
 			cout << endl;
 
-			cout << "at()·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£ºab cd ef gh ij" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šab cd ef gh ij" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -470,36 +471,36 @@ int main()
 
 			cout << endl;
 
-			cout << "front()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£ºab" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.front() << endl;
+			cout << "front()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼šab" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.front() << endl;
 
 			cout << endl;
 
 
-			cout << "back()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£ºij" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.back() << endl;
+			cout << "back()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼šij" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.back() << endl;
 
 			cout << endl;
 
-			cout << "data()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º" << &arr1 << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.data() << endl;
+			cout << "data()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š" << &arr1 << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.data() << endl;
 
 			cout << endl << endl;
 
 		}
 
-		// µÚ3×é²âÊÔ 
+		// ç¬¬3ç»„æµ‹è¯• 
 		if (test_string[3]) {
-			press_key(1, "µÚ3×é²âÊÔ£º\n *ÓĞÔ½½çµÄ*at()º¯Êı");
+			press_key(1, "ç¬¬3ç»„æµ‹è¯•ï¼š\n *æœ‰è¶Šç•Œçš„*at()å‡½æ•°");
 			array<string, 5> arr1 = { "ab","cd" ,"ef", "gh", "ij" };
 			array<string, 0> arr2;
 
-			cout << "at()·ÃÎÊÔ½½ç: " << endl;
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®è¶Šç•Œ: " << endl;
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(5) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -510,8 +511,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(-1) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -522,8 +523,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, 0> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, 0> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr2.at(1) << endl;
 				//throw(std::out_of_range("invalid array<T, 0> subscript"));
@@ -535,16 +536,16 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ4×é²âÊÔ 
+		// ç¬¬4ç»„æµ‹è¯• 
 		if (test_string[4]) {
-			press_key(1, "µÚ4×é²âÊÔ£º\n fill(),swap()º¯Êı");
+			press_key(1, "ç¬¬4ç»„æµ‹è¯•ï¼š\n fill(),swap()å‡½æ•°");
 			array<string, 5> arr1 = { "ab","cd" ,"ef", "gh", "ij" };
 			array<string, 5> arr2 = { "ij","gh" ,"ef", "cd", "ab" };
 
-			cout << "fill()º¯Êı: " << endl;
+			cout << "fill()å‡½æ•°: " << endl;
 			arr1.fill("mn");
-			cout << "Ó¦Êä³ö£ºmn mn mn mn mn" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šmn mn mn mn mn" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -553,18 +554,18 @@ int main()
 			cout << endl;
 
 
-			cout << "swap()º¯Êı: " << endl;
+			cout << "swap()å‡½æ•°: " << endl;
 			arr1.swap(arr2);
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£ºij gh ef cd ab" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šij gh ef cd ab" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
 			cout << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£ºmn mn mn mn mn" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šmn mn mn mn mn" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr2.size(); i++) {
 				cout << arr2.at(i) << " ";
 			}
@@ -575,17 +576,17 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ5×é²âÊÔ 
+		// ç¬¬5ç»„æµ‹è¯• 
 		if (test_string[5]) {
-			press_key(1, "µÚ5×é²âÊÔ£º\n °´ÕÕ> == < >= <= !=µÄË³Ğò¶ÔÁ½¸öarrayÊı×éÈİÆ÷½øĞĞ±È½Ï");
+			press_key(1, "ç¬¬5ç»„æµ‹è¯•ï¼š\n æŒ‰ç…§> == < >= <= !=çš„é¡ºåºå¯¹ä¸¤ä¸ªarrayæ•°ç»„å®¹å™¨è¿›è¡Œæ¯”è¾ƒ");
 			array<string, 5> arr1 = { "abc", "def", "ghi","jkl", "mno" };
 			array<string, 5> arr2 = { "mno", "jkl", "ghi", "def", "abc" };
 			array<string, 5> arr3 = { "mno", "jkl", "ghi", "def", "abc" };
 			array<string, 5> arr4 = { "mno", "jkl", "ghi", "def", "abd" };
 
-			cout << "arr1Óëarr2±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º0 0 1 0 1 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr1 > arr2) ? 1 : 0) << " ";
+			cout << "arr1ä¸arr2æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š0 0 1 0 1 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr1 > arr2) ? 1 : 0) << " ";
 			cout << ((arr1 == arr2) ? 1 : 0) << " ";
 			cout << ((arr1 < arr2) ? 1 : 0) << " ";
 			cout << ((arr1 >= arr2) ? 1 : 0) << " ";
@@ -595,9 +596,9 @@ int main()
 
 			cout << endl;
 
-			cout << "arr2Óëarr3±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º0 1 0 1 1 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr2 > arr3) ? 1 : 0) << " ";
+			cout << "arr2ä¸arr3æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š0 1 0 1 1 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr2 > arr3) ? 1 : 0) << " ";
 			cout << ((arr2 == arr3) ? 1 : 0) << " ";
 			cout << ((arr2 < arr3) ? 1 : 0) << " ";
 			cout << ((arr2 >= arr3) ? 1 : 0) << " ";
@@ -608,9 +609,9 @@ int main()
 			cout << endl;
 
 
-			cout << "arr4Óëarr2±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º1 0 0 1 0 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << ((arr4 > arr2) ? 1 : 0) << " ";
+			cout << "arr4ä¸arr2æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 0 0 1 0 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << ((arr4 > arr2) ? 1 : 0) << " ";
 			cout << ((arr4 == arr2) ? 1 : 0) << " ";
 			cout << ((arr4 < arr2) ? 1 : 0) << " ";
 			cout << ((arr4 >= arr2) ? 1 : 0) << " ";
@@ -621,9 +622,9 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ6×é²âÊÔ 
+		// ç¬¬6ç»„æµ‹è¯• 
 		if (test_string[6]) {
-			press_key(1, "µÚ6×é²âÊÔ£º\n ¿É×ÔĞĞ±àĞ´");
+			press_key(1, "ç¬¬6ç»„æµ‹è¯•ï¼š\n å¯è‡ªè¡Œç¼–å†™");
 
 			cout << endl;
 		}
@@ -633,21 +634,21 @@ int main()
 	
 	//student
 	if (0) {
-		int test_student[] = { 1,1,1,1,1,1,1 }; //Ã¿¸ö1¶ÔÓ¦1×éif²âÊÔ
-		const student mother[4] = { {1851846,"¾Ïè¯",'f',(float)(92.2),"ºÓ±±"},
-		{1851801,"Áõ×ÓÔÆ",'f',(float)(94.2),"ºÓ±±"},
-		{1854205,"Ö£ê¿Ñş",'f',(float)(93.5),"ºş±±"},
-		{1854167,"ĞìË¼ç÷",'f',(float)(91.7),"ºş±±"} };
+		int test_student[] = { 1,1,1,1,1,1,1 }; //æ¯ä¸ª1å¯¹åº”1ç»„ifæµ‹è¯•
+		const student mother[4] = { {1851846,"é ç’‡",'f',(float)(92.2),"æ²³åŒ—"},
+		{1851801,"åˆ˜å­äº‘",'f',(float)(94.2),"æ²³åŒ—"},
+		{1854205,"éƒ‘æ˜•ç‘¶",'f',(float)(93.5),"æ¹–åŒ—"},
+		{1854167,"å¾æ€çª",'f',(float)(91.7),"æ¹–åŒ—"} };
 
-	// µÚ0×é²âÊÔ 
+	// ç¬¬0ç»„æµ‹è¯• 
 		if (test_student[0]) {
-			press_key(1, "µÚ0×é²âÊÔ£º\n begin/end/cbegin/cend()¼°rbegin/rend/crbegin/crend()º¯Êı");
+			press_key(1, "ç¬¬0ç»„æµ‹è¯•ï¼š\n begin/end/cbegin/cend()åŠrbegin/rend/crbegin/crend()å‡½æ•°");
 
 			array<student, 4> arr1 = { mother[0],mother[1],mother[2],mother[3] };
 
-			cout << "Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º¾Ïè¯£¬Áõ×ÓÔÆ£¬Ö£ê¿Ñş£¬ĞìË¼ç÷ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šé ç’‡ï¼Œåˆ˜å­äº‘ï¼Œéƒ‘æ˜•ç‘¶ï¼Œå¾æ€çªå››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.begin(); it != arr1.end(); ++it) {
 				cout << *it << " ";
 			}
@@ -655,8 +656,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£º¾Ïè¯£¬Áõ×ÓÔÆ£¬Ö£ê¿Ñş£¬ĞìË¼ç÷ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šé ç’‡ï¼Œåˆ˜å­äº‘ï¼Œéƒ‘æ˜•ç‘¶ï¼Œå¾æ€çªå››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.cbegin(); it != arr1.cend(); ++it) {
 				cout << *it << " ";
 			}
@@ -664,9 +665,9 @@ int main()
 
 			cout << endl;
 
-			cout << "Êı×é±éÀú(·´Ïò): " << endl;
-			cout << "Ó¦Êä³ö£ºĞìË¼ç÷£¬Ö£ê¿Ñş£¬Áõ×ÓÔÆ£¬¾Ïè¯ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(åå‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šå¾æ€çªï¼Œéƒ‘æ˜•ç‘¶ï¼Œåˆ˜å­äº‘ï¼Œé ç’‡å››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.rbegin(); it != arr1.rend(); ++it) {
 				cout << *it << " ";
 			}
@@ -674,8 +675,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºĞìË¼ç÷£¬Ö£ê¿Ñş£¬Áõ×ÓÔÆ£¬¾Ïè¯ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šå¾æ€çªï¼Œéƒ‘æ˜•ç‘¶ï¼Œåˆ˜å­äº‘ï¼Œé ç’‡å››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = arr1.crbegin(); it != arr1.crend(); ++it) {
 				cout << *it << " ";
 			}
@@ -684,66 +685,66 @@ int main()
 			cout << endl;
 
 			array<int, 0> arr2;
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±beginºÍendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.begin() == arr2.end()) << endl;
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶beginå’Œendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.begin() == arr2.end()) << endl;
 
 			cout << endl;
 
-			cout << "²âÊÔµ±Êı×é´óĞ¡Îª0Ê±rbeginºÍrendÊÇ·ñÏàµÈ" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << (arr2.rbegin() == arr2.rend());
+			cout << "æµ‹è¯•å½“æ•°ç»„å¤§å°ä¸º0æ—¶rbeginå’Œrendæ˜¯å¦ç›¸ç­‰" << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << (arr2.rbegin() == arr2.rend());
 
 			cout << endl << endl;
 		}
 
-		// µÚ1×é²âÊÔ 
+		// ç¬¬1ç»„æµ‹è¯• 
 		if (test_student[1]) {
-			press_key(1, "µÚ1×é²âÊÔ£º\n size()¡¢max_size()ºÍempty()º¯Êı");
+			press_key(1, "ç¬¬1ç»„æµ‹è¯•ï¼š\n size()ã€max_size()å’Œempty()å‡½æ•°");
 
 			array<student, 4> arr1 = { mother[0],mother[1],mother[2],mother[3] };
 			array<student, 0> arr2;
 
-			cout << "size()º¯Êı: " << endl;
+			cout << "size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º"<<sizeof(arr1)/sizeof(student) << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š"<<sizeof(arr1)/sizeof(student) << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.size() << endl;
 
 			cout << endl;
 
-			cout << "max_size()º¯Êı: " << endl;
+			cout << "max_size()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º"<< sizeof(arr1) / sizeof(student) << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š"<< sizeof(arr1) / sizeof(student) << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.max_size() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.max_size() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.max_size() << endl;
 
 			cout << endl;
 
-			cout << "empty()º¯Êı: " << endl;
+			cout << "empty()å‡½æ•°: " << endl;
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£º0" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š0" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.empty() << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£º1" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr2.empty() << endl;
+			cout << "åº”è¾“å‡ºï¼š1" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr2.empty() << endl;
 
 			cout << endl << endl;
 		}
 
-		// µÚ2×é²âÊÔ 
+		// ç¬¬2ç»„æµ‹è¯• 
 		if (test_student[2]) {
-			press_key(1, "µÚ2×é²âÊÔ£º\n *ÎŞÔ½½çµÄ*ÏÂ±ê[]·ÃÎÊ£¬at(),front(),back(),data()º¯Êı");
+			press_key(1, "ç¬¬2ç»„æµ‹è¯•ï¼š\n *æ— è¶Šç•Œçš„*ä¸‹æ ‡[]è®¿é—®ï¼Œat(),front(),back(),data()å‡½æ•°");
 			array<student, 4> arr1 = { mother[0],mother[1],mother[2],mother[3] };
 			array<string, 0> arr2;
 
-			cout << "ÏÂ±ê[]·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º¾Ïè¯£¬Áõ×ÓÔÆ£¬Ö£ê¿Ñş£¬ĞìË¼ç÷ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "ä¸‹æ ‡[]è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šé ç’‡ï¼Œåˆ˜å­äº‘ï¼Œéƒ‘æ˜•ç‘¶ï¼Œå¾æ€çªå››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1[i] << " ";
 			}
@@ -751,9 +752,9 @@ int main()
 
 			cout << endl;
 
-			cout << "at()·ÃÎÊ,Êı×é±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º¾Ïè¯£¬Áõ×ÓÔÆ£¬Ö£ê¿Ñş£¬ĞìË¼ç÷ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®,æ•°ç»„éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼šé ç’‡ï¼Œåˆ˜å­äº‘ï¼Œéƒ‘æ˜•ç‘¶ï¼Œå¾æ€çªå››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -761,36 +762,36 @@ int main()
 
 			cout << endl;
 
-			cout << "front()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º1851846 ¾Ïè¯ f 92.2 ºÓ±±" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.front() << endl;
+			cout << "front()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1851846 é ç’‡ f 92.2 æ²³åŒ—" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.front() << endl;
 
 			cout << endl;
 
 
-			cout << "back()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º1854167 ĞìË¼ç÷ f 91.7 ºş±±" << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.back() << endl;
+			cout << "back()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1854167 å¾æ€çª f 91.7 æ¹–åŒ—" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.back() << endl;
 
 			cout << endl;
 
-			cout << "data()º¯Êı: " << endl;
-			cout << "Ó¦Êä³ö£º" << &arr1 << endl;
-			cout << "Êµ¼ÊÊÇ£º" << arr1.data() << endl;
+			cout << "data()å‡½æ•°: " << endl;
+			cout << "åº”è¾“å‡ºï¼š" << &arr1 << endl;
+			cout << "å®é™…æ˜¯ï¼š" << arr1.data() << endl;
 
 			cout << endl << endl;
 
 		}
 
-		// µÚ3×é²âÊÔ 
+		// ç¬¬3ç»„æµ‹è¯• 
 		if (test_student[3]) {
-			press_key(1, "µÚ3×é²âÊÔ£º\n *ÓĞÔ½½çµÄ*at()º¯Êı");
+			press_key(1, "ç¬¬3ç»„æµ‹è¯•ï¼š\n *æœ‰è¶Šç•Œçš„*at()å‡½æ•°");
 			array<student, 4> arr1 = { mother[0],mother[1],mother[2],mother[3] };
 			array<string, 0> arr2;
 
-			cout << "at()·ÃÎÊÔ½½ç: " << endl;
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "at()è®¿é—®è¶Šç•Œ: " << endl;
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(4) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -801,8 +802,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, N> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, N> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr1.at(-1) << endl;
 				//throw(std::out_of_range("invalid array<T, N> subscript"));
@@ -813,8 +814,8 @@ int main()
 
 			cout << endl;
 
-			cout << "Ó¦Êä³ö£ºinvalid array<T, 0> subscript" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šinvalid array<T, 0> subscript" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			try {
 				cout << arr2.at(1) << endl;
 				//throw(std::out_of_range("invalid array<T, 0> subscript"));
@@ -826,15 +827,15 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ4×é²âÊÔ 
+		// ç¬¬4ç»„æµ‹è¯• 
 		if (test_student[4]) {
-			press_key(1, "µÚ4×é²âÊÔ£º\n fill(),swap()º¯Êı");
+			press_key(1, "ç¬¬4ç»„æµ‹è¯•ï¼š\n fill(),swap()å‡½æ•°");
 			array<student, 4> arr1 = { mother[0],mother[1],mother[2],mother[3] };
 			array<student, 4> arr2 = { mother[3],mother[2],mother[1],mother[0] }; 
-			cout << "fill()º¯Êı: " << endl;
-			arr1.fill({ 1854167,"ĞìË¼ç÷",'f',91.0,"ºş±±" });
-			cout << "Ó¦Êä³ö£ºËÄ±éĞìË¼ç÷µÄĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "fill()å‡½æ•°: " << endl;
+			arr1.fill({ 1854167,"å¾æ€çª",'f',91.0,"æ¹–åŒ—" });
+			cout << "åº”è¾“å‡ºï¼šå››éå¾æ€çªçš„ä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
@@ -843,18 +844,18 @@ int main()
 			cout << endl;
 
 
-			cout << "swap()º¯Êı: " << endl;
+			cout << "swap()å‡½æ•°: " << endl;
 			arr1.swap(arr2);
 			cout << "arr1:" << endl;
-			cout << "Ó¦Êä³ö£ºĞìË¼ç÷£¬Ö£ê¿Ñş£¬Áõ×ÓÔÆ£¬¾Ïè¯ËÄÈËĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šå¾æ€çªï¼Œéƒ‘æ˜•ç‘¶ï¼Œåˆ˜å­äº‘ï¼Œé ç’‡å››äººä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr1.size(); i++) {
 				cout << arr1.at(i) << " ";
 			}
 			cout << endl;
 			cout << "arr2:" << endl;
-			cout << "Ó¦Êä³ö£ºÎå±éĞìË¼ç÷µÄĞÅÏ¢" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡ºï¼šäº”éå¾æ€çªçš„ä¿¡æ¯" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (int i = 0; i < (int)arr2.size(); i++) {
 				cout << arr2.at(i) << " ";
 			}
@@ -865,26 +866,26 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ5×é²âÊÔ 
+		// ç¬¬5ç»„æµ‹è¯• 
 		if (test_student[5]) {
-			press_key(1, "µÚ5×é²âÊÔ£º\n °´ÕÕ == !=µÄË³Ğò¶ÔÁ½¸öarrayÊı×éÈİÆ÷½øĞĞ±È½Ï£¨±È½ÏÑ§ºÅ£¬ÆäËü²»½øĞĞ²âÊÔ£©");
+			press_key(1, "ç¬¬5ç»„æµ‹è¯•ï¼š\n æŒ‰ç…§ == !=çš„é¡ºåºå¯¹ä¸¤ä¸ªarrayæ•°ç»„å®¹å™¨è¿›è¡Œæ¯”è¾ƒï¼ˆæ¯”è¾ƒå­¦å·ï¼Œå…¶å®ƒä¸è¿›è¡Œæµ‹è¯•ï¼‰");
 			array<student, 4> arr1 = { mother[0], mother[1], mother[2],mother[3] };
 			array<student, 4> arr2 = { mother[0], mother[1], mother[2],mother[3] };
 			array<student, 4> arr3 = { mother[0], mother[1], mother[2],mother[2] };
 
 
-			cout << "arr1Óëarr2±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º1 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "arr1ä¸arr2æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š1 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << ((arr1 == arr2) ? 1 : 0) << " ";
 			cout << ((arr1 != arr2) ? 1 : 0) << " ";
 			cout << endl;
 
 			cout << endl;
 
-			cout << "arr1Óëarr3±È½Ï: " << endl;
-			cout << "Ó¦Êä³ö£º0 1" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "arr1ä¸arr3æ¯”è¾ƒ: " << endl;
+			cout << "åº”è¾“å‡ºï¼š0 1" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << ((arr1 == arr3) ? 1 : 0) << " ";
 			cout << ((arr1 != arr3) ? 1 : 0) << " ";
 			cout << endl;
@@ -892,9 +893,9 @@ int main()
 			cout << endl << endl;
 		}
 
-		// µÚ6×é²âÊÔ 
+		// ç¬¬6ç»„æµ‹è¯• 
 		if (test_student[6]) {
-			press_key(1, "µÚ6×é²âÊÔ£º\n ¿É×ÔĞĞ±àĞ´");
+			press_key(1, "ç¬¬6ç»„æµ‹è¯•ï¼š\n å¯è‡ªè¡Œç¼–å†™");
 
 			cout << endl;
 		}

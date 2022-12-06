@@ -1,4 +1,4 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "tj_student_array.h"
@@ -32,7 +32,7 @@ bool operator !=(const student &a, const student &b) {
 	return a.num != b.num ? true : false;
 }
 ostream &operator<<(ostream &out, const student &a) {
-	out << "Ñ§ºÅ£º" << a.num << "ĞÕÃû£º" << a.name << " ĞÔ±ğ£º" << a.sex << " ·ÖÊı£º" << a.score << " µØÖ·£º" << a.addr << endl;
+	out << "å­¦å·ï¼š" << a.num << "å§“åï¼š" << a.name << " æ€§åˆ«ï¼š" << a.sex << " åˆ†æ•°ï¼š" << a.score << " åœ°å€ï¼š" << a.addr << endl;
 	return out;
 }
 istream &operator>>(istream &in, student& a) {

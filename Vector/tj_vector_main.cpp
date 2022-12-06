@@ -1,15 +1,15 @@
-/* 1853790 ÊıÇ¿ ×¯Õò»ª */
+/* 1853790 æ•°å¼º åº„é•‡å */
 #include<iostream>
 #include <string>
 #include <vector>
 #include"tj_student_vector.h"
 #include"tj_vector.cpp"
-//Õâ¾äºê¶¨Òå×¢ÊÍµô£¬¾ÍÊÇÏµÍ³vectorµÄ²âÊÔ£¬
-//´ò¿ªºê¶¨Òå£¬Ôò²âÊÔ×Ô¼ºµÄtj_vector
+//è¿™å¥å®å®šä¹‰æ³¨é‡Šæ‰ï¼Œå°±æ˜¯ç³»ç»Ÿvectorçš„æµ‹è¯•ï¼Œ
+//æ‰“å¼€å®å®šä¹‰ï¼Œåˆ™æµ‹è¯•è‡ªå·±çš„tj_vector
 #define vector tj_vector
 using namespace std;
 
-/* ÒÔÏÂÎª²âÊÔ¿ª¹Ø£¬¾ßÌå²âÊÔÄÚÈİ¼ûmainº¯ÊıÌõ¼ş±àÒëÉÏ²¿×¢ÊÍ±ê×¢ */
+/* ä»¥ä¸‹ä¸ºæµ‹è¯•å¼€å…³ï¼Œå…·ä½“æµ‹è¯•å†…å®¹è§mainå‡½æ•°æ¡ä»¶ç¼–è¯‘ä¸Šéƒ¨æ³¨é‡Šæ ‡æ³¨ */
 #define test1_1 1
 #define test1_2 1
 #define test1_3 1
@@ -37,7 +37,7 @@ struct President
 	}
 };
 
-//vectorº¯ÊıÇåµ¥
+//vectorå‡½æ•°æ¸…å•
 //member functions
 //vector::operator=
 //vector::assign
@@ -81,7 +81,7 @@ struct President
 void _continue(int num, const char *prompt = NULL)
 {
 	int i;
-	cout << endl << "°´ÈÎÒâ¼ü¼ÌĞø...";
+	cout << endl << "æŒ‰ä»»æ„é”®ç»§ç»­...";
 	for (i = 0; i < num; i++)
 		getchar();
 	cout << endl;
@@ -90,14 +90,14 @@ int main(){
 	if (0) {
 		vector<President> elections;
 		std::cout << "emplace_back:\n";
-		cout << "Ó¦¸ÃÊä³öÒ»¾ä»°: \n I am being constructed." << endl;
-		cout << "Êµ¼Ê\n";
-		elections.emplace_back("Nelson Mandela", "South Africa", 1994); //Ã»ÓĞÀàµÄ´´½¨  
-		//ÀûÓÃµÄ¿É±ä²ÎÊı°ü
+		cout << "åº”è¯¥è¾“å‡ºä¸€å¥è¯: \n I am being constructed." << endl;
+		cout << "å®é™…\n";
+		elections.emplace_back("Nelson Mandela", "South Africa", 1994); //æ²¡æœ‰ç±»çš„åˆ›å»º  
+		//åˆ©ç”¨çš„å¯å˜å‚æ•°åŒ…
 		vector<President> reElections;
 		std::cout << "\npush_back:\n";
-		cout << "Ó¦¸ÃÊä³öÁ½¾ä»°:\nI am being constructed \nI am being moved. " << endl;
-		cout << "Êµ¼Ê\n";
+		cout << "åº”è¯¥è¾“å‡ºä¸¤å¥è¯:\nI am being constructed \nI am being moved. " << endl;
+		cout << "å®é™…\n";
 
 		reElections.emplace_back(President("Franklin Delano Roosevelt", "the USA", 1936));
 	    //&&
@@ -112,10 +112,10 @@ int main(){
 		}
 		_continue(1);
 	}
-	//²âÊÔbegin/end/cbegin/cend/rbegin/rend/crbegin/crend/assignº¯Êı
+	//æµ‹è¯•begin/end/cbegin/cend/rbegin/rend/crbegin/crend/assignå‡½æ•°
 #if test1_1
 	{
-		cout << "test1_1 : ²âÊÔbegin/end/cbegin/cend/rbegin/rend/crbegin/crend/assignº¯Êı" << endl;
+		cout << "test1_1 : æµ‹è¯•begin/end/cbegin/cend/rbegin/rend/crbegin/crend/assignå‡½æ•°" << endl;
 		vector<int> first, second, third;
 		first.assign(7, 100);             // 7 ints with a value of 100
 		auto it = first.begin() + 1;
@@ -123,24 +123,24 @@ int main(){
 		int myints[] = { 1776,7,4 };
 		third.assign(myints, myints + 3);   // assigning from array.
 
-		cout << "Ó¦Êä³ö£º 1 2 3 4 5" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡ºï¼š 1 2 3 4 5" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> myvector = { 1,2,3,4,5 };
 		for (auto it = myvector.begin(); it != myvector.end(); ++it)
 			cout << ' ' << *it;
 		cout << '\n';
-		cout << "Ó¦Êä³ö   100 100 100 100 100 100 100" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º   100 100 100 100 100 100 100" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		for (auto it = first.cbegin(); it != first.cend(); ++it)
 			cout << ' ' << *it;
 		cout << '\n';
-		cout << "Ó¦Êä³ö   100 100 100 100 100" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º   100 100 100 100 100" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		for (auto it = second.crbegin(); it != second.crend(); ++it)
 			cout << ' ' << *it;
 		cout << '\n';
-		cout << "Ó¦Êä³ö   4 7 1776" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º   4 7 1776" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		for (auto it = third.rbegin(); it != third.rend(); ++it)
 			cout << ' ' << *it;
 		cout << '\n';
@@ -148,12 +148,12 @@ int main(){
 		_continue(1);
 	}
 #endif
-	//²âÊÔempty/pop_back/push_back/erase/insertº¯Êı
+	//æµ‹è¯•empty/pop_back/push_back/erase/insertå‡½æ•°
 #if test1_2
 	{
-		cout << "test1_2 : ²âÊÔempty/pop_back/push_back/erase/insertº¯Êı" << endl;
-		cout << "Ó¦Êä³ö  The elements of myvector add up to 600" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "test1_2 : æµ‹è¯•empty/pop_back/push_back/erase/insertå‡½æ•°" << endl;
+		cout << "åº”è¾“å‡º  The elements of myvector add up to 600" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> myvector;
 		int sum(0);
 		myvector.push_back(100);
@@ -165,8 +165,8 @@ int main(){
 		}
 		cout << "The elements of myvector add up to " << sum << endl;
 
-		cout << "Ó¦Êä³ö  my contains: 10 9 8 7 5 4" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º  my contains: 10 9 8 7 5 4" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> my;
 		// set some values (from 1 to 10)
 		for (int i = 1; i <= 10; i++)
@@ -180,8 +180,8 @@ int main(){
 			cout << ' ' << *it;
 		cout << endl;
 
-		cout << "Ó¦Êä³ö  myvector1 contains: 501 502 503 300 300 400 400 200 100 100 100" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º  myvector1 contains: 501 502 503 300 300 400 400 200 100 100 100" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> myvector1(3, 100);
 		vector<int>::iterator it;
 		it = myvector1.begin();
@@ -209,12 +209,12 @@ int main(){
 		_continue(2);
 	}
 #endif
-	//²âÊÔsize/clear/max_size/capacityº¯Êı
+	//æµ‹è¯•size/clear/max_size/capacityå‡½æ•°
 #if test1_3
 	{
-		cout << "test1_3 : ²âÊÔsize/clear/max_size/capacityº¯Êı" << endl;
-		cout << "Ó¦Êä³ö  size: 0 size : 10 size : 20 size : 19" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "test1_3 : æµ‹è¯•size/clear/max_size/capacityå‡½æ•°" << endl;
+		cout << "åº”è¾“å‡º  size: 0 size : 10 size : 20 size : 19" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> myints;
 		cout << "size: " << myints.size() << " ";
 		for (int i = 0; i < 10; i++)
@@ -226,8 +226,8 @@ int main(){
 		cout << "size: " << myints.size() << " ";
 		cout << endl;
 
-		cout << "Ó¦Êä³ö  size: 100 capacity: 141 max_size: 1073741823" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º  size: 100 capacity: 141 max_size: 1073741823" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		vector<int> myvector;
 		// set some content in the vector:
 		for (int i = 0; i < 100; i++)
@@ -237,8 +237,8 @@ int main(){
 		cout << "max_size: " << myvector.max_size() << " ";
 		cout << endl;
 
-		cout << "Ó¦Êä³ö  myvector contains: 1101 2202 0 1" << endl;
-		cout << "Êµ¼ÊÊÇ£º";
+		cout << "åº”è¾“å‡º  myvector contains: 1101 2202 0 1" << endl;
+		cout << "å®é™…æ˜¯ï¼š";
 		myvector.clear();
 		myvector.push_back(1101);
 		myvector.push_back(2202);
@@ -254,19 +254,19 @@ int main(){
 		_continue(1);
 	}
 #endif
-	//²âÊÔat/data/front/backº¯Êı
+	//æµ‹è¯•at/data/front/backå‡½æ•°
 #if test1_4
 	{
 		{
-			cout << "test1_4 : ²âÊÔat/data/front/backº¯Êı" << endl;
+			cout << "test1_4 : æµ‹è¯•at/data/front/backå‡½æ•°" << endl;
 			vector<int> myvector(5);
 			int* p = myvector.data();
 			*p = 10;
 			++p;
 			*p = 20;
 			p[2] = 100;
-			cout << "Ó¦Êä³ö  myvector contains: 10 20 0 100 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 20 0 100 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned i = 0; i < myvector.size(); ++i)
 				cout << ' ' << myvector[i];
@@ -278,8 +278,8 @@ int main(){
 			// assign some values:
 			for (unsigned i = 0; i < myvector.size(); i++)
 				myvector.at(i) = i;
-			cout << "Ó¦Êä³ö  myvector contains: 0 1 2 3 4 5 6 7 8 9" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 0 1 2 3 4 5 6 7 8 9" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned i = 0; i < myvector.size(); i++)
 				cout << ' ' << myvector.at(i);
@@ -290,8 +290,8 @@ int main(){
 			myvector.push_back(10);
 			while (myvector.back() != 0)
 				myvector.push_back(myvector.back() - 1);
-			cout << "Ó¦Êä³ö  myvector contains: 10 9 8 7 6 5 4 3 2 1 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 9 8 7 6 5 4 3 2 1 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned i = 0; i < myvector.size(); i++)
 				cout << ' ' << myvector[i];
@@ -303,28 +303,28 @@ int main(){
 			myvector.push_back(16);
 			// now front equals 78, and back 16
 			myvector.front() -= myvector.back();
-			cout << "Ó¦Êä³ö  myvector.front() is now 62" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector.front() is now 62" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector.front() is now " << myvector.front() << endl;
 		}
 		_continue(2);
 	}
 
 #endif
-//	//²âÊÔ=¸³ÖµÖØÔØ/resize/reverse/shrink_to_fit/emplace/emplace_backº¯Êı
+//	//æµ‹è¯•=èµ‹å€¼é‡è½½/resize/reverse/shrink_to_fit/emplace/emplace_backå‡½æ•°
 #if test1_5
 	{
 		{
-			cout << "test1_5 : ²âÊÔ=¸³ÖµÖØÔØ/resize/reverse/shrink_to_fit/emplace/emplace_backº¯Êı" << endl;
+			cout << "test1_5 : æµ‹è¯•=èµ‹å€¼é‡è½½/resize/reverse/shrink_to_fit/emplace/emplace_backå‡½æ•°" << endl;
 			vector<int> foo(3, 0);
 			vector<int> bar(5, 0);
 			bar = foo;
 			foo = vector<int>();
-			cout << "Ó¦Êä³ö  Size of foo: 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  Size of foo: 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "Size of foo: " << int(foo.size()) << '\n';
-			cout << "Ó¦Êä³ö  Size of bar: 3" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  Size of bar: 3" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "Size of bar: " << int(bar.size()) << '\n';
 		}
 		cout << endl;
@@ -334,22 +334,22 @@ int main(){
 			for (int i = 1; i < 10; i++)
 				myvector.push_back(i);
 			myvector.resize(5);
-			cout << "Ó¦Êä³ö  myvector contains: 1 2 3 4 5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 1 2 3 4 5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned int i = 0; i < myvector.size(); i++)
 				cout << ' ' << myvector[i];
 			cout << endl;
 			myvector.resize(8, 100);
-			cout << "Ó¦Êä³ö  myvector contains: 1 2 3 4 5 100 100 100" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 1 2 3 4 5 100 100 100" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned int i = 0; i < myvector.size(); i++)
 				cout << ' ' << myvector[i];
 			cout << endl;
 			myvector.resize(12);
-			cout << "Ó¦Êä³ö  myvector contains: 1 2 3 4 5 100 100 100 0 0 0 0" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 1 2 3 4 5 100 100 100 0 0 0 0" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (unsigned int i = 0; i < myvector.size(); i++)
 				cout << ' ' << myvector[i];
@@ -359,8 +359,8 @@ int main(){
 		{
 			vector<int> foo;
 			auto sz = foo.capacity();
-			cout << "Ó¦Êä³ö  making foo grow:1 2 3 4 6 9 13 19 28 42 63 94 141" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  making foo grow:1 2 3 4 6 9 13 19 28 42 63 94 141" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "making foo grow:";
 			for (int i = 0; i < 100; ++i) {
 				foo.push_back(i);
@@ -373,8 +373,8 @@ int main(){
 			vector<int> bar;
 			sz = bar.capacity();
 			bar.reserve(100);   // this is the only difference with foo above
-			cout << "Ó¦Êä³ö  making bar grow:100" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  making bar grow:100" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "making bar grow:";
 			for (int i = 0; i < 100; ++i) {
 				bar.push_back(i);
@@ -387,8 +387,8 @@ int main(){
 		}
 		cout << endl;
 		{
-			cout << "Ó¦Êä³ö  capacity of myvector: 100 capacity of myvector: 100 capacity of myvector: 10" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  capacity of myvector: 100 capacity of myvector: 100 capacity of myvector: 10" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			vector<int> myvector(100);
 			cout << "capacity of myvector: " << myvector.capacity() << ' ';
 			myvector.resize(10);
@@ -400,22 +400,22 @@ int main(){
 		{
 			vector<int> myvector = { 10,20,30 };
 			auto it = myvector.emplace(myvector.begin() + 1, 100);
-			cout << "Ó¦Êä³ö  myvector contains: 10 100 20 30" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 100 20 30" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (auto x = myvector.begin(); x != myvector.end(); x++)
 				cout << ' ' << *x;
 			cout << endl;
 			myvector.emplace(it, 200);
-			cout << "Ó¦Êä³ö  myvector contains: 10 200 100 20 30" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 200 100 20 30" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (auto x = myvector.begin(); x != myvector.end(); x++)
 				cout << ' ' << *x;
 			cout << endl;
 			myvector.emplace(myvector.end(), 300);
-			cout << "Ó¦Êä³ö  myvector contains: 10 200 100 20 30 300" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 200 100 20 30 300" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (auto x = myvector.begin(); x != myvector.end(); x++)
 				cout << ' ' << *x;
@@ -425,15 +425,15 @@ int main(){
 		{
 			vector<int> myvector = { 10,20,30 };
 			myvector.emplace_back(100);
-			cout << "Ó¦Êä³ö  myvector contains: 10 20 30 100" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 20 30 100" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (auto x = myvector.begin(); x != myvector.end(); x++)
 				cout << ' ' << *x;
 			cout << endl;
 			myvector.emplace_back(200);
-			cout << "Ó¦Êä³ö  myvector contains: 10 20 30 100 200" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  myvector contains: 10 20 30 100 200" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "myvector contains:";
 			for (auto x = myvector.begin(); x != myvector.end(); x++)
 				cout << ' ' << *x;
@@ -443,22 +443,22 @@ int main(){
 	}
 
 #endif
-	//²âÊÔswap³ÉÔ±ÓÑÔªº¯Êı
+	//æµ‹è¯•swapæˆå‘˜å‹å…ƒå‡½æ•°
 #if test1_6
 	{
-		cout << "test1_6 : ²âÊÔswap³ÉÔ±ÓÑÔªº¯Êı£º" << endl;
+		cout << "test1_6 : æµ‹è¯•swapæˆå‘˜å‹å…ƒå‡½æ•°ï¼š" << endl;
 		{
 			vector<int> foo(3, 100);   // three ints with a value of 100
 			vector<int> bar(5, 200);   // five ints with a value of 200
 			foo.swap(bar);
-			cout << "Ó¦Êä³ö  foo contains: 200 200 200 200 200" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  foo contains: 200 200 200 200 200" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "foo contains:";
 			for (unsigned i = 0; i < foo.size(); i++)
 				cout << ' ' << foo[i];
 			cout << '\n';
-			cout << "Ó¦Êä³ö  bar contains: 100 100 100" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  bar contains: 100 100 100" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "bar contains:";
 			for (unsigned i = 0; i < bar.size(); i++)
 				cout << ' ' << bar[i];
@@ -469,14 +469,14 @@ int main(){
 			vector<int> foo(3, 100);   // three ints with a value of 100
 			vector<int> bar(5, 200);   // five ints with a value of 200
 			swap(foo, bar);
-			cout << "Ó¦Êä³ö  foo contains: 200 200 200 200 200" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  foo contains: 200 200 200 200 200" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "foo contains:";
 			for (vector<int>::iterator it = foo.begin(); it != foo.end(); ++it)
 				cout << ' ' << *it;
 			cout << '\n';
-			cout << "Ó¦Êä³ö  bar contains: 100 100 100" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "åº”è¾“å‡º  bar contains: 100 100 100" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			cout << "bar contains:";
 			for (vector<int>::iterator it = bar.begin(); it != bar.end(); ++it)
 				cout << ' ' << *it;
@@ -485,20 +485,20 @@ int main(){
 		_continue(1);
 	}
 #endif
-	//²âÊÔstringÀà
+	//æµ‹è¯•stringç±»
 #if test2_1
 	{
-		cout << "test2_1 : ²âÊÔstringÀà" << endl;
-		int test_int[] = { 1,1,1,1 }; //Ã¿¸ö1¶ÔÓ¦1×éif²âÊÔ
-		// µÚ1×é²âÊÔ 
+		cout << "test2_1 : æµ‹è¯•stringç±»" << endl;
+		int test_int[] = { 1,1,1,1 }; //æ¯ä¸ª1å¯¹åº”1ç»„ifæµ‹è¯•
+		// ç¬¬1ç»„æµ‹è¯• 
 		if (test_int[0]) {
-			_continue(1, "µÚ1×é²âÊÔ£º begin/end  rbegin/rendº¯Êı");
+			_continue(1, "ç¬¬1ç»„æµ‹è¯•ï¼š begin/end  rbegin/rendå‡½æ•°");
 
 			vector<string> t1 = { "test1", "test2", "test3", "test4", "test5" };
 
-			cout << "±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£ºtest1 test2 test3 test4 test5" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼štest1 test2 test3 test4 test5" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = t1.begin(); it != t1.end(); ++it) {
 				cout << *it << " ";
 			}
@@ -506,75 +506,75 @@ int main(){
 
 			cout << endl;
 
-			cout << "Êı×é±éÀú(·´Ïò): " << endl;
-			cout << "Ó¦Êä³ö£ºtest5 test4 test3 test2 test1" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "æ•°ç»„éå†(åå‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼štest5 test4 test3 test2 test1" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = t1.rbegin(); it != t1.rend(); ++it) {
 				cout << *it << " ";
 			}
 			cout << endl;
 		}
 		cout << endl;
-		// µÚ2×é²âÊÔ 
+		// ç¬¬2ç»„æµ‹è¯• 
 		if (test_int[1]) {
-			_continue(1, "µÚ2×é²âÊÔ£º\n push_back() pop_back()º¯Êı");
+			_continue(1, "ç¬¬2ç»„æµ‹è¯•ï¼š\n push_back() pop_back()å‡½æ•°");
 			vector<string> t1 = { "test1", "test2", "test3", "test4", "test5" };
 			t1.pop_back();
-			cout << "pop_back()µÄ²âÊÔ\n";
-			cout << "Ó¦Êä³ö£ºtest1 test2 test3 test4" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "pop_back()çš„æµ‹è¯•\n";
+			cout << "åº”è¾“å‡ºï¼štest1 test2 test3 test4" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
 			t1.push_back("test6");
-			cout << "push_back()µÄ²âÊÔ";
-			cout << "½á¹û\nÓ¦¸ÃÊÇ:test1 test2 test3 test4 test6    \n" << "Êµ¼ÊÊÇ: ";
+			cout << "push_back()çš„æµ‹è¯•";
+			cout << "ç»“æœ\nåº”è¯¥æ˜¯:test1 test2 test3 test4 test6    \n" << "å®é™…æ˜¯: ";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
 		}
 		cout << endl;
-		// µÚ3×é²âÊÔ 
+		// ç¬¬3ç»„æµ‹è¯• 
 		if (test_int[2]) {
-			_continue(1, "µÚ3×é²âÊÔ£º swap()");
+			_continue(1, "ç¬¬3ç»„æµ‹è¯•ï¼š swap()");
 			vector<string> t1 = { "test1", "test2", "test3", "test4", "test5" };
 			vector<string> t2 = { "test-1", "test-2", "test-3", "test-4" };
-			cout << "swap()µÄ²âÊÔ\n" << endl;
+			cout << "swap()çš„æµ‹è¯•\n" << endl;
 			t1.swap(t2);
-			cout << "t1 Ó¦¸ÃÊÇ test-1 test-2 test-3 test-4£¬\nÊµ¼ÊÊÇ";
+			cout << "t1 åº”è¯¥æ˜¯ test-1 test-2 test-3 test-4ï¼Œ\nå®é™…æ˜¯";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
-			cout << "t2 Ó¦¸ÃÊÇ test1 test2 test3 test4 test5£¬\nÊµ¼ÊÊÇ";
+			cout << "t2 åº”è¯¥æ˜¯ test1 test2 test3 test4 test5ï¼Œ\nå®é™…æ˜¯";
 			for (auto p = t2.begin(); p != t2.end(); p++)
 				cout << *p << " ";
 			cout << endl;
-			cout << "ÔÙ´Î½»»»µÄ²âÊÔ\n" << endl;
+			cout << "å†æ¬¡äº¤æ¢çš„æµ‹è¯•\n" << endl;
 			t1.swap(t2);
-			cout << "t1 Ó¦¸ÃÊÇ test1 test2 test3 test4 test5£¬\nÊµ¼ÊÊÇ";
+			cout << "t1 åº”è¯¥æ˜¯ test1 test2 test3 test4 test5ï¼Œ\nå®é™…æ˜¯";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
-			cout << "t2 Ó¦¸ÃÊÇ test-1 test-2 test-3 test-4£¬\nÊµ¼ÊÊÇ";
+			cout << "t2 åº”è¯¥æ˜¯ test-1 test-2 test-3 test-4ï¼Œ\nå®é™…æ˜¯";
 			for (auto p = t2.begin(); p != t2.end(); p++)
 				cout << *p << " ";
 			cout << endl;
 		}
 
-		// µÚ4×é²âÊÔ 
+		// ç¬¬4ç»„æµ‹è¯• 
 		if (test_int[3]) {
-			_continue(1, "µÚ4×é²âÊÔ£º emplace() emplace_back() ");
+			_continue(1, "ç¬¬4ç»„æµ‹è¯•ï¼š emplace() emplace_back() ");
 			vector<string> t1 = { "test1", "test2", "test3", "test4", "test5" };
 			t1.emplace_back("test9");
-			cout << "emplace_back()µÄ²âÊÔ\n";
-			cout << "Ó¦Êä³ö£ºtest1 test2 test3 test4 test5 test9" << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "emplace_back()çš„æµ‹è¯•\n";
+			cout << "åº”è¾“å‡ºï¼štest1 test2 test3 test4 test5 test9" << endl;
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
 			t1.emplace(t1.begin(), "test0");
-			cout << "emplace()µÄ²âÊÔ";
-			cout << "½á¹û\nÓ¦¸ÃÊÇ:test0 test1 test2 test3 test4 test5 test9\n" << "Êµ¼ÊÊÇ: ";
+			cout << "emplace()çš„æµ‹è¯•";
+			cout << "ç»“æœ\nåº”è¯¥æ˜¯:test0 test1 test2 test3 test4 test5 test9\n" << "å®é™…æ˜¯: ";
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << " ";
 			cout << endl;
@@ -582,84 +582,84 @@ int main(){
 		_continue(1);
 	}
 #endif
-	//²âÊÔstudentÀà
+	//æµ‹è¯•studentç±»
 #if test3_1
 	{
-		cout << "test3_1 : ²âÊÔstudentÀà" << endl;
-		int test_int[] = { 1,1,1,1 }; //Ã¿¸ö1¶ÔÓ¦1×éif²âÊÔ
-		// µÚ1×é²âÊÔ 
+		cout << "test3_1 : æµ‹è¯•studentç±»" << endl;
+		int test_int[] = { 1,1,1,1 }; //æ¯ä¸ª1å¯¹åº”1ç»„ifæµ‹è¯•
+		// ç¬¬1ç»„æµ‹è¯• 
 		if (test_int[0]) {
-			_continue(1, "µÚ1×é²âÊÔ£º begin/end  rbegin/rendº¯Êı");
+			_continue(1, "ç¬¬1ç»„æµ‹è¯•ï¼š begin/end  rbegin/rendå‡½æ•°");
 			vector<student> t1 = { {1001,"t1",'M',81,"test1" },{1002,"t2",'F',82,"test2" },
 								{1003,"t3",'M',83,"test3" } };
 
-			cout << "±éÀú(ÕıÏò): " << endl;
-			cout << "Ó¦Êä³ö£º1001-t1-M-81-test1 " << endl;
+			cout << "éå†(æ­£å‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š1001-t1-M-81-test1 " << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
 			cout << "        1003-t3-M-83-test3 " << endl;
-			cout << "Êµ¼ÊÊÇ£º";
+			cout << "å®é™…æ˜¯ï¼š";
 			for (auto it = t1.begin(); it != t1.end(); ++it) {
 				cout << *it << endl;
 			}
 			cout << endl;
-			cout << "Êı×é±éÀú(·´Ïò): " << endl;
-			cout << "Ó¦Êä³ö£º1003-t3-M-83-test3" << endl;
+			cout << "æ•°ç»„éå†(åå‘): " << endl;
+			cout << "åº”è¾“å‡ºï¼š1003-t3-M-83-test3" << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
 			cout << "        1001-t1-M-81-test1 " << endl;
-			cout << "Êµ¼ÊÊÇ£º" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << endl;
 			for (auto it = t1.rbegin(); it != t1.rend(); ++it) {
 				cout << *it << endl;
 			}
 			cout << endl;
 			cout << endl;
 		}
-		// µÚ2×é²âÊÔ 
+		// ç¬¬2ç»„æµ‹è¯• 
 		if (test_int[1]) {
-			_continue(1, "µÚ2×é²âÊÔ£º push_back() pop_back()º¯Êı");
+			_continue(1, "ç¬¬2ç»„æµ‹è¯•ï¼š push_back() pop_back()å‡½æ•°");
 			vector<student> t1 = { {1001,"t1",'M',81,"test1" },{1002,"t2",'F',82,"test2" },
 							{1003,"t3",'M',83,"test3" } };
 			t1.pop_back();
-			cout << "pop_back()µÄ²âÊÔ\n";
-			cout << "Ó¦Êä³ö£º1001-t1-M-81-test1 " << endl;
+			cout << "pop_back()çš„æµ‹è¯•\n";
+			cout << "åº”è¾“å‡ºï¼š1001-t1-M-81-test1 " << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
-			cout << "Êµ¼ÊÊÇ£º" << endl;
+			cout << "å®é™…æ˜¯ï¼š" << endl;
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << endl;
 			cout << endl;
 			t1.push_back({ 1004,"t4",'M',84,"test4" });
-			cout << "push_back()µÄ²âÊÔ\n";
-			cout << "Ó¦Êä³ö£º1001-t1-M 81-test1 " << endl;
+			cout << "push_back()çš„æµ‹è¯•\n";
+			cout << "åº”è¾“å‡ºï¼š1001-t1-M 81-test1 " << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
 			cout << "        1004-t4-M-84-test4 " << endl;
-			cout << "Êµ¼ÊÊÇ: " << endl;
+			cout << "å®é™…æ˜¯: " << endl;
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << endl;
 			cout << endl;
 			cout << endl;
 		}
-		// µÚ3×é²âÊÔ 
+		// ç¬¬3ç»„æµ‹è¯• 
 		if (test_int[2]) {
-			_continue(1, "µÚ3×é²âÊÔ£º  emplace() emplace_back()");
+			_continue(1, "ç¬¬3ç»„æµ‹è¯•ï¼š  emplace() emplace_back()");
 			vector<student> t1 = { {1001,"t1",'M',81,"test1" },{1002,"t2",'F',82,"test2" },
 							{1003,"t3",'M',83,"test3" } };
 			t1.emplace(t1.begin() + 2, student({ 1004,"t4",'M',84,"test4" }));
-			cout << "emplace()µÄ²âÊÔ£¬½á¹û\nÓ¦¸ÃÊÇ" << endl;
+			cout << "emplace()çš„æµ‹è¯•ï¼Œç»“æœ\nåº”è¯¥æ˜¯" << endl;
 			cout << "        1001-t1-M-81-test1 " << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
 			cout << "        1004-t4-M-84-test4 " << endl;
 			cout << "        1003-t3-M-83-test3 " << endl;
-			cout << "Êµ¼ÊÊÇ" << endl;
+			cout << "å®é™…æ˜¯" << endl;
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << endl;
 			cout << endl;
 			t1.emplace_back(student({ 1005,"t5",'M',85,"test5" }));
-			cout << "emplace_back()µÄ²âÊÔ£¬½á¹û\nÓ¦¸ÃÊÇ" << endl;
+			cout << "emplace_back()çš„æµ‹è¯•ï¼Œç»“æœ\nåº”è¯¥æ˜¯" << endl;
 			cout << "        1001-t1-M-81-test1 " << endl;
 			cout << "        1002-t2-F-82-test2 " << endl;
 			cout << "        1004-t4-M-84-test4 " << endl;
 			cout << "        1003-t3-M-83-test3 " << endl;
 			cout << "        1005-t5-M-85-test5 " << endl;
-			cout << "Êµ¼ÊÊÇ" << endl;
+			cout << "å®é™…æ˜¯" << endl;
 			for (auto p = t1.begin(); p != t1.end(); p++)
 				cout << *p << endl;
 			cout << endl;

@@ -1,6 +1,7 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #pragma once
 #include<iostream>
+#include<initializer_list>
 using namespace std;
 class student {
 public:

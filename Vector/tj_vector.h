@@ -1,4 +1,4 @@
-// 1852024 ÊıÇ¿ Àî±øÀÚ
+// 1852024 æ•°å¼º æå…µç£Š
 #pragma once
 #include<memory>
 #include<iostream>
@@ -10,7 +10,7 @@ using namespace std;
 
 #define InitialSize	4
 #define IncreaseTime 2
-/*********************************************************** µü´úÆ÷ ************************************************************/
+/*********************************************************** è¿­ä»£å™¨ ************************************************************/
 template<class T>
 class tj_iterator {
 public:
@@ -158,15 +158,15 @@ template<class T>
 using tj_const_iterator = const tj_iterator<T>;
 
 
-/******************************************************* tj_vector¶¨Òå ************************************************************/
+/******************************************************* tj_vectorå®šä¹‰ ************************************************************/
 template<class T>
-class tj_vector:public tj_iterator<T> {	// Í¨ÓÃÊÊÅäÄ£°å
+class tj_vector:public tj_iterator<T> {	// é€šç”¨é€‚é…æ¨¡æ¿
 private:
-	size_t len;			//¸ÃvectorÒÑ¾­Ê¹ÓÃµÄ¸öÊı
-	size_t max_len;		//Îª¸ÃvectorÒÑ¾­·ÖÅäµÄ¿Õ¼ä¸öÊı
+	size_t len;			//è¯¥vectorå·²ç»ä½¿ç”¨çš„ä¸ªæ•°
+	size_t max_len;		//ä¸ºè¯¥vectorå·²ç»åˆ†é…çš„ç©ºé—´ä¸ªæ•°
 	allocator<T> Alloc;
 public:
-	T *head;			//ËùÓĞÏßĞÔÔªËØµÄÍ·Ö¸Õë.
+	T *head;			//æ‰€æœ‰çº¿æ€§å…ƒç´ çš„å¤´æŒ‡é’ˆ.
 public:
 
 	using iterator = tj_iterator<T>;
@@ -196,7 +196,7 @@ public:
 	void assign(const tj_vector<T>& _Other);
 	void assign(initializer_list<T> L);
 
-	/********************µü´úÆ÷Ïà¹Ø********************/
+	/********************è¿­ä»£å™¨ç›¸å…³********************/
 	tj_iterator<T> begin() noexcept {
 		return tj_iterator<T>(len ? head : nullptr);
 	}
